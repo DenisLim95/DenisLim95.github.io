@@ -3,172 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denis Federico Lim | AI Researcher</title>
+    <title>Denis Federico Manuel Lim</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">Denis Lim</a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
+    <div class="container">
+        <header>
+            <h1>Denis Federico Manuel Lim</h1>
+            <div class="intro">
+                <p>
+                    I'm an AI Engineer at <a href="https://scale.com">Scale AI</a> working on agentic capabilities,
+                    and an incoming <a href="#">MARS Fellow</a> researching scalable oversight and mechanistic
+                    interpretability. My research focuses on AI safety, interpretability, and understanding
+                    reasoning in large language models.
+                </p>
+                <p>
+                    I hold a Master's in Computer Science and a Bachelor's in Mechanical Engineering from the
+                    University of Southern California. I've worked at Scale AI, Two Sigma, and Amazon.
+                </p>
+                <p class="links">
+                    <a href="mailto:denislim95@gmail.com">Email</a> &nbsp;/&nbsp;
+                    <a href="https://linkedin.com/in/denis-manuel-lim">LinkedIn</a>
+                </p>
             </div>
-        </div>
-    </nav>
+        </header>
 
-    <main>
-        <section id="about" class="section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h1>Denis Federico Manuel Lim</h1>
-                        <p class="tagline">AI Engineer & Researcher</p>
-                        <p>
-                            I'm an AI Engineer at Scale AI working on agentic capabilities, and an incoming
-                            MARS Fellow researching scalable oversight and mechanistic interpretability.
-                            My research focuses on AI safety, interpretability, and understanding reasoning
-                            in large language models.
-                        </p>
-                        <p>
-                            I hold a Master's in Computer Science and a Bachelor's in Mechanical Engineering
-                            from the University of Southern California. I've worked at Scale AI, Two Sigma,
-                            and Amazon.
-                        </p>
-                        <div class="social-links">
-                            <a href="https://linkedin.com/in/denis-manuel-lim" target="_blank">LinkedIn</a>
-                            <a href="mailto:denislim95@gmail.com">Email</a>
-                        </div>
-                    </div>
+        <section>
+            <h2>Research</h2>
+
+            <div class="paper">
+                <div class="paper-content">
+                    <p class="paper-title">Representational Adversarial Steganography in Colluding LLMs</p>
+                    <p class="paper-authors">Apart Research Hackathon (co-organized with Redwood Research), 2026</p>
+                    <p class="paper-desc">
+                        Co-authored paper on collusive representational steganography as a multi-agent
+                        AI control threat model, formalized as a three-player adversarial game.
+                        Implemented co-evolutionary adversarial training protocol using GPT-2 small
+                        with a rank-8 latent MLP channel; achieved near-perfect covert signal transmission
+                        while degrading monitor accuracy to ~20% after 15 adversarial rounds.
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-content">
+                    <p class="paper-title">Chain-of-thought Faithfulness in Small Reasoning Models</p>
+                    <p class="paper-authors">2025</p>
+                    <p class="paper-desc">
+                        Designed and implemented an end-to-end mechanistic interpretability pipeline
+                        to evaluate CoT faithfulness in DeepSeek-R1-Distill-Qwen-1.5B using question-flipping
+                        methodology. Cached residual stream activations using TransformerLens hooks;
+                        trained linear probes to classify faithfulness from internal activations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-content">
+                    <p class="paper-title">Medical Inhaler Spacer Research</p>
+                    <p class="paper-authors">USC Viterbi Senior Design, 2017</p>
+                    <p class="paper-desc">
+                        Collaborated with Children's Hospital of Los Angeles to design and test
+                        pressurized medicinal inhaler spacer. Implemented Digital Image Correlation (DIC)
+                        methods with MATLAB to numerically analyze fluid dynamics and optimize device
+                        geometry through systematic experimentation.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="research" class="section">
-            <div class="container">
-                <h2>Research</h2>
-                <div class="publications-list">
-                    <article class="publication">
-                        <h3>Representational Adversarial Steganography in Colluding LLMs</h3>
-                        <p class="venue">Apart Research Hackathon (co-organized with Redwood Research), March 2026</p>
-                        <p class="description">
-                            Co-authored paper on collusive representational steganography as a multi-agent
-                            AI control threat model, formalized as a three-player adversarial game.
-                            Implemented co-evolutionary adversarial training protocol using GPT-2 small
-                            with a rank-8 latent MLP channel; achieved near-perfect covert signal transmission
-                            while degrading monitor accuracy to ~20% after 15 adversarial rounds.
-                        </p>
-                    </article>
+        <section>
+            <h2>Experience</h2>
 
-                    <article class="publication">
-                        <h3>Chain-of-thought Faithfulness in Small Reasoning Models</h3>
-                        <p class="venue">November 2025</p>
-                        <p class="description">
-                            Designed and implemented an end-to-end mechanistic interpretability pipeline
-                            to evaluate CoT faithfulness in DeepSeek-R1-Distill-Qwen-1.5B using question-flipping
-                            methodology. Cached residual stream activations using TransformerLens hooks;
-                            trained linear probes to classify faithfulness from internal activations.
-                        </p>
-                    </article>
+            <div class="item">
+                <p><strong>Scale AI</strong> — AI Engineer, Agentic Capabilities <span class="date">2025–Present</span></p>
+                <p class="item-desc">Building hyper-local deep research agentic systems and automated evaluation framework to benchmark research quality, grounding, and task success across iterations.</p>
+            </div>
 
-                    <article class="publication">
-                        <h3>Medical Inhaler Spacer Research</h3>
-                        <p class="venue">USC Viterbi Senior Design, January 2017 – May 2017</p>
-                        <p class="description">
-                            Collaborated with Children's Hospital of Los Angeles to design and test
-                            pressurized medicinal inhaler spacer. Implemented Digital Image Correlation (DIC)
-                            methods with MATLAB to numerically analyze fluid dynamics and optimize device
-                            geometry through systematic experimentation.
-                        </p>
-                    </article>
-                </div>
+            <div class="item">
+                <p><strong>Two Sigma</strong> — Software Engineer, Platform Engineering <span class="date">2022–2025</span></p>
+                <p class="item-desc">Workflow Orchestration Platform, Distributed systems, Centralized database service, Tech Risk/Authorization/Security.</p>
+            </div>
+
+            <div class="item">
+                <p><strong>Amazon</strong> — Software Development Engineer <span class="date">2020–2022</span></p>
+                <p class="item-desc">Built components of compromised account Sanitization and Cleaning workflow orchestrators.</p>
             </div>
         </section>
 
-        <section id="experience" class="section">
-            <div class="container">
-                <h2>Experience</h2>
-                <div class="experience-list">
-                    <article class="experience-item">
-                        <div class="experience-header">
-                            <h3>Scale AI</h3>
-                            <span class="location">San Francisco, USA</span>
-                        </div>
-                        <div class="experience-role">
-                            <span class="title">AI Engineer — Agentic Capabilities</span>
-                            <span class="dates">July 2025 – Present</span>
-                        </div>
-                        <p>
-                            Building hyper-local deep research agentic systems and automated evaluation
-                            framework to benchmark research quality, grounding, and task success across iterations.
-                        </p>
-                    </article>
+        <section>
+            <h2>Education</h2>
 
-                    <article class="experience-item">
-                        <div class="experience-header">
-                            <h3>Two Sigma</h3>
-                            <span class="location">New York, NY, USA</span>
-                        </div>
-                        <div class="experience-role">
-                            <span class="title">Software Engineer — Platform Engineering</span>
-                            <span class="dates">August 2022 – July 2025</span>
-                        </div>
-                        <p>
-                            Workflow Orchestration Platform, Distributed systems, Centralized database service,
-                            Tech Risk/Authorization/Security.
-                        </p>
-                    </article>
+            <div class="item">
+                <p><strong>University of Southern California</strong> — M.S. Computer Science <span class="date">2017–2019</span></p>
+            </div>
 
-                    <article class="experience-item">
-                        <div class="experience-header">
-                            <h3>Amazon</h3>
-                            <span class="location">Seattle, WA, USA</span>
-                        </div>
-                        <div class="experience-role">
-                            <span class="title">Software Development Engineer</span>
-                            <span class="dates">April 2020 – July 2022</span>
-                        </div>
-                        <p>
-                            Built components of compromised account Sanitization and Cleaning workflow orchestrators.
-                        </p>
-                    </article>
-                </div>
+            <div class="item">
+                <p><strong>University of Southern California</strong> — B.S. Mechanical Engineering <span class="date">2013–2017</span></p>
             </div>
         </section>
-
-        <section id="education" class="section">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="education-list">
-                    <article class="education-item">
-                        <div class="education-header">
-                            <h3>University of Southern California</h3>
-                            <span class="dates">August 2017 – December 2019</span>
-                        </div>
-                        <p class="degree">Master's, Computer Science</p>
-                    </article>
-
-                    <article class="education-item">
-                        <div class="education-header">
-                            <h3>University of Southern California</h3>
-                            <span class="dates">August 2013 – May 2017</span>
-                        </div>
-                        <p class="degree">Bachelor's, Mechanical Engineering</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Denis Federico Lim. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
