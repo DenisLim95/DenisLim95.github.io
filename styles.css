@@ -21,10 +21,31 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Navigation */
+nav {
+    border-bottom: 1px solid #ddd;
+    padding: 16px 20px;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: #333;
+}
+
+nav a:hover {
+    color: #0066cc;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 40px 20px;
 }
 
 header {
@@ -99,6 +120,22 @@ section {
 .date {
     color: #888;
     font-size: 0.9rem;
+}
+
+/* Projects */
+.project {
+    margin-bottom: 28px;
+}
+
+.project-title {
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.project-desc {
+    color: #555;
+    font-size: 0.95rem;
 }
 
 /* Responsive */
