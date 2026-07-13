@@ -136,6 +136,11 @@ section {
 .project-desc {
     color: #555;
     font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.project-links {
+    font-size: 0.95rem;
 }
 
 /* Responsive */
