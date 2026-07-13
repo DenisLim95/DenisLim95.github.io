@@ -19,28 +19,20 @@
             <h1>Projects</h1>
         </header>
 
-        <section>
-            <div class="project">
-                <h3 class="project-title">BlueDot Technical AI Safety Puzzle</h3>
-                <p class="project-desc">
-                    Correct submission to <a href="https://bluedot.org/puzzles/technical-ai-safety">BlueDot's Technical AI Safety Puzzle #1</a>.
-                    The challenge involved analyzing a neural network where one of eight binary features
-                    was encoded non-linearly. I identified the non-linear feature (country) using linear
-                    and MLP probes, discovered it was represented as a convex polytope bounded by ~34
-                    ReLU hyperplanes, and verified convexity through interpolation tests. For the final
-                    task, I trained a model encoding the feature as a quarter-arc in a 2D subspace using
-                    custom circle and angular spread losses.
-                </p>
-                <p class="project-links">
-                    <a href="https://drive.google.com/file/d/1GC2kFm5dcHIEmyVZ6i9-DTn5bKI-AaAq/view">3D PCA Visualization</a>
-                </p>
-            </div>
+        <div class="projects-grid">
+            <a href="projects/bluedot-puzzle.html" class="project-card">
+                <div class="project-card-image">
+                    <img src="https://raw.githubusercontent.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle/main/3d-pca.png" alt="BlueDot Technical AI Safety Puzzle">
+                </div>
+                <h3 class="project-card-title">BlueDot Technical AI Safety Puzzle</h3>
+            </a>
 
-            <div class="project">
-                <h3 class="project-title">Trust the kernel</h3>
-                <p class="project-desc">Coming soon.</p>
-            </div>
-        </section>
+            <a href="projects/trust-the-kernel.html" class="project-card">
+                <div class="project-card-image placeholder">
+                </div>
+                <h3 class="project-card-title">Trust the kernel</h3>
+            </a>
+        </div>
     </div>
 </body>
 </html>

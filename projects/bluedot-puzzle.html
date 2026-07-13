@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueDot Technical AI Safety Puzzle | Denis Federico Manuel Lim</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html">Home</a>
+            <a href="../projects.html">Projects</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <article class="blog-post">
+            <header>
+                <h1>BlueDot Technical AI Safety Puzzle</h1>
+                <p class="post-meta">
+                    Correct submission to <a href="https://bluedot.org/puzzles/technical-ai-safety">BlueDot's Technical AI Safety Puzzle #1</a>
+                </p>
+                <p class="post-links">
+                    <a href="https://github.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle">View Code on GitHub</a>
+                </p>
+            </header>
+
+            <section>
+                <h2>Overview</h2>
+                <p>
+                    This puzzle explores how neural networks represent features internally. Given a model
+                    trained on 8 binary features, one feature was deliberately encoded non-linearly in
+                    the activation space. The challenge had three parts: identify which feature, characterize
+                    its geometric representation, and train a new model with a different (equally weird)
+                    representation.
+                </p>
+
+                <figure>
+                    <img src="https://raw.githubusercontent.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle/main/model_architecture.png" alt="Model architecture diagram">
+                    <figcaption>The model architecture: input features pass through a hidden layer, and we analyze the activations before the final classification.</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h2>Task 1: Finding the Non-Linear Feature</h2>
+
+                <p>
+                    To identify which feature was encoded non-linearly, I trained linear probes on the
+                    model's hidden layer activations for each of the 8 features. A linear probe is simply
+                    a logistic regression classifier. If it achieves high accuracy, the feature is linearly
+                    separable in activation space.
+                </p>
+
+                <h3>Linear Probe Results</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>gender</td><td>100.0%</td></tr>
+                        <tr><td>age</td><td>100.0%</td></tr>
+                        <tr><td>income</td><td>100.0%</td></tr>
+                        <tr><td>married</td><td>100.0%</td></tr>
+                        <tr><td>kids</td><td>100.0%</td></tr>
+                        <tr><td>ill</td><td>100.0%</td></tr>
+                        <tr><td>employed</td><td>100.0%</td></tr>
+                        <tr><td>country</td><td>74.9%</td></tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    The <strong>country</strong> feature stood out with only 74.9% accuracy, barely better
+                    than random guessing for a binary feature. This indicates it cannot be linearly separated
+                    in activation space.
+                </p>
+
+                <h3>Confirming with MLP Probe</h3>
+                <p>
+                    To verify the information was present but non-linearly encoded, I trained an MLP probe
+                    (with a hidden layer) on the country feature. It achieved near-perfect accuracy, confirming
+                    the feature is represented, just not linearly.
+                </p>
+
+                <figure>
+                    <img src="https://raw.githubusercontent.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle/main/mlp-probe.png" alt="MLP probe training curves">
+                    <figcaption>MLP probe achieves high accuracy on the country feature, confirming the information exists but requires non-linear decision boundaries.</figcaption>
+                </figure>
+
+                <h3>PCA Visualization</h3>
+                <p>
+                    Projecting activations to 2D via PCA reveals the structure visually. Linear features
+                    show clean separation along principal components; the country feature shows a more
+                    complex, enclosed structure.
+                </p>
+
+                <figure>
+                    <img src="https://raw.githubusercontent.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle/main/country-vs-no-country.png" alt="PCA projection showing country vs other features">
+                    <figcaption>PCA projection of activations colored by country (left) vs. a linearly-encoded feature (right). The country feature shows enclosed regions rather than linear separation.</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h2>Task 2: How Country is Represented</h2>
+
+                <p>
+                    Understanding <em>how</em> the country feature was represented required analyzing
+                    the network's geometry more carefully.
+                </p>
+
+                <h3>Centroid Distance Analysis</h3>
+                <p>
+                    I computed the centroids of activations for each country class. Unlike linearly-separated
+                    features where centroids are far apart, the country centroids were relatively close,
+                    suggesting a more complex boundary structure.
+                </p>
+
+                <figure>
+                    <img src="https://raw.githubusercontent.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle/main/distance-from-centroid.png" alt="Distance from centroid analysis">
+                    <figcaption>Distribution of distances from class centroids for country vs. other features.</figcaption>
+                </figure>
+
+                <h3>Weight Analysis</h3>
+                <p>
+                    Examining which hidden neurons contribute to country classification revealed the mechanism:
+                </p>
+                <ul>
+                    <li><strong>~34 active neurons:</strong> These neurons have significant weights to the country output</li>
+                    <li><strong>ReLU boundaries:</strong> Each neuron defines a hyperplane in input space where it transitions from inactive to active</li>
+                    <li><strong>Intersection forms polytope:</strong> The combination of ~34 ReLU hyperplanes carves out a convex polytope in activation space</li>
+                </ul>
+
+                <figure>
+                    <img src="https://raw.githubusercontent.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle/main/neurons-firing.png" alt="Neuron firing patterns">
+                    <figcaption>Visualization of which neurons fire for each country class, showing the ~34 neurons that define the polytope boundary.</figcaption>
+                </figure>
+
+                <h3>The Convex Polytope Hypothesis</h3>
+                <p>
+                    My hypothesis: one country class corresponds to points <em>inside</em> a convex polytope
+                    bounded by ~34 ReLU hyperplanes, while the other class lies <em>outside</em> this region.
+                </p>
+
+                <h3>Interpolation Test</h3>
+                <p>
+                    To verify convexity, I performed interpolation tests. For pairs of points from the same
+                    class, I checked whether points along the line between them maintained the same classification:
+                </p>
+                <ul>
+                    <li><strong>Interior class:</strong> Interpolated points stayed inside (convexity property)</li>
+                    <li><strong>Exterior class:</strong> Interpolated points could cross into the interior</li>
+                </ul>
+                <p>
+                    This asymmetry confirms the convex polytope structure: the interior is convex by definition,
+                    while the exterior of a convex set is not convex.
+                </p>
+
+                <h3>3D Visualization</h3>
+                <p>
+                    Projecting activations onto the first three principal components shows the polytope
+                    structure. The video below rotates through the 3D space, revealing how one country
+                    class forms an enclosed region.
+                </p>
+
+                <div class="video-container">
+                    <video controls playsinline>
+                        <source src="../videos/bluedot-pca-3d.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <figure>
+                    <img src="https://raw.githubusercontent.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle/main/3d-pca.png" alt="3D PCA projection">
+                    <figcaption>Static view of the 3D PCA projection showing the polytope boundary.</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h2>Task 3: Training with Different Representation</h2>
+
+                <p>
+                    The final task was to train a model that encoded the country feature in a different
+                    but equally "weird" (non-linear) way while maintaining accuracy on all 8 features.
+                </p>
+
+                <h3>Quarter-Arc Encoding</h3>
+                <p>
+                    My approach: encode the country feature as a <strong>quarter-arc in a 2D subspace</strong>.
+                    Instead of a polytope, each country class occupies a distinct 90° arc on a circle.
+                    This is non-linear (not separable by a single hyperplane) but geometrically very different
+                    from a polytope.
+                </p>
+
+                <h3>Custom Loss Functions</h3>
+                <p>
+                    I implemented two auxiliary losses to encourage this representation:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Circle Loss:</strong> Penalizes deviation from unit circle in a designated
+                        2D subspace of the activations. This constrains points to lie on a 1D manifold.
+                    </li>
+                    <li>
+                        <strong>Angular Spread Loss:</strong> Ensures the two country classes occupy
+                        distinct angular regions (~90° each) with clear separation between them.
+                    </li>
+                </ul>
+
+                <h3>Results</h3>
+                <p>
+                    The trained model successfully encoded country as quarter-arcs while achieving high
+                    accuracy on all 8 classification tasks.
+                </p>
+
+                <figure>
+                    <img src="../images/circle-encoded.png" alt="Circle-encoded country feature">
+                    <figcaption>The retrained model's activations projected to the 2D subspace, showing country classes as distinct arcs on a circle.</figcaption>
+                </figure>
+
+                <p>
+                    This demonstrates that the geometric representation of features in neural networks
+                    is a design choice. The same information can be encoded as polytopes, arcs, or other
+                    structures depending on the training objective.
+                </p>
+            </section>
+
+            <p class="back-link">
+                <a href="../projects.html">&larr; Back to Projects</a>
+            </p>
+        </article>
+    </div>
+</body>
+</html>
