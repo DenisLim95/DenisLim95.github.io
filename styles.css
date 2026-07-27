@@ -5,67 +5,145 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-family: "adobe-garamond-pro", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
     color: #333;
-    background: #fff;
+    background: #f7f7f7;
 }
 
 a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
+    color: #4a6fa5;
     text-decoration: underline;
 }
 
-/* Navigation */
-nav {
-    border-bottom: 1px solid #ddd;
-    padding: 16px 20px;
+a:hover {
+    color: #2d4a6f;
 }
 
+/* Navigation - full width */
+nav {
+    padding: 32px 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.site-title:hover {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    text-decoration: underline;
+}
+
+/* Legacy nav-container support */
 .nav-container {
-    max-width: 800px;
-    margin: 0 auto;
     display: flex;
     gap: 24px;
 }
 
-nav a {
+nav .nav-container a {
     color: #333;
+    text-decoration: none;
 }
 
-nav a:hover {
-    color: #0066cc;
+nav .nav-container a:hover {
+    text-decoration: underline;
 }
 
+/* Main container - centered */
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 4vw 80px;
+}
+
+/* Hero section - two column layout */
+.hero {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 60px;
+    margin-bottom: 64px;
+    align-items: start;
+}
+
+.hero-image {
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 50%;
+}
+
+.hero-content p {
+    margin-bottom: 16px;
+}
+
+.hero-links {
+    margin-top: 24px;
+}
+
+.hero-links a {
+    margin-right: 8px;
+}
+
+.hero-links a:after {
+    content: " /";
+    color: #999;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.hero-links a:last-child:after {
+    content: "";
+}
+
+/* Sections - align with hero content (not photo) */
+section {
+    margin-bottom: 48px;
+    margin-left: 260px; /* 200px photo + 60px gap */
 }
 
 header {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
 }
 
 h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #000;
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-bottom: 16px;
+    color: #333;
 }
 
 h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #000;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 24px;
+    color: #333;
 }
 
 .intro p {
@@ -76,30 +154,83 @@ h2 {
     margin-top: 16px;
 }
 
-section {
-    margin-bottom: 40px;
+.links a {
+    margin-right: 8px;
 }
 
-/* Research/Paper entries */
+.links a:after {
+    content: " /";
+    color: #999;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.links a:last-child:after {
+    content: "";
+}
+
+/* Research/Paper entries - table style */
+.papers-list {
+    display: table;
+    width: 100%;
+}
+
 .paper {
-    margin-bottom: 28px;
+    display: table-row;
+}
+
+.paper-date {
+    display: table-cell;
+    color: #888;
+    font-size: 0.95rem;
+    padding-right: 24px;
+    padding-bottom: 8px;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.paper-info {
+    display: table-cell;
+    padding-bottom: 8px;
+    vertical-align: top;
 }
 
 .paper-title {
-    font-weight: 600;
-    color: #000;
+    color: #333;
     margin-bottom: 4px;
 }
 
+.paper-title a {
+    color: #4a6fa5;
+}
+
 .paper-authors {
-    font-style: italic;
     color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
 }
 
 .paper-desc {
-    color: #444;
+    color: #555;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+/* Legacy paper structure */
+.paper-content .paper-title {
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.paper-content .paper-authors {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.paper-content .paper-desc {
+    color: #555;
     font-size: 0.95rem;
 }
 
@@ -122,21 +253,26 @@ section {
     font-size: 0.9rem;
 }
 
+/* Projects page */
+.projects-page section {
+    margin-left: 0;
+}
+
 /* Projects */
 .project {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
 .project-title {
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 8px;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 6px;
 }
 
 .project-desc {
     color: #555;
     font-size: 0.95rem;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .project-links {
@@ -146,7 +282,7 @@ section {
 /* Projects Grid (Catalog) */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 32px;
 }
 
@@ -154,19 +290,16 @@ section {
     display: block;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.2s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
     text-decoration: none;
 }
 
 .project-card-image {
     aspect-ratio: 16 / 10;
-    background: #f5f5f5;
+    background: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
     overflow: hidden;
     margin-bottom: 12px;
 }
@@ -191,22 +324,22 @@ section {
 
 .project-card-title {
     font-size: 1rem;
-    font-weight: 600;
-    color: #000;
+    font-weight: normal;
+    color: #333;
     margin: 0;
 }
 
 .project-card:hover .project-card-title {
-    color: #0066cc;
+    color: #4a6fa5;
 }
 
 /* Blog Post Styles */
 .blog-post {
-    max-width: 700px;
+    max-width: 720px;
 }
 
 .blog-post header {
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 }
 
 .blog-post h1 {
@@ -224,21 +357,23 @@ section {
 }
 
 .blog-post section {
-    margin-bottom: 32px;
+    margin-bottom: 36px;
+    margin-left: 0;
 }
 
 .blog-post h2 {
     font-size: 1.3rem;
-    margin-top: 32px;
+    margin-top: 36px;
     margin-bottom: 16px;
 }
 
 .blog-post h3 {
     font-size: 1.1rem;
-    font-weight: 600;
-    color: #000;
+    font-weight: normal;
+    color: #333;
     margin-top: 24px;
     margin-bottom: 12px;
+    font-style: italic;
 }
 
 .blog-post p {
@@ -265,15 +400,15 @@ section {
 
 .blog-post th,
 .blog-post td {
-    padding: 10px 12px;
+    padding: 8px 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 .blog-post th {
-    font-weight: 600;
-    color: #000;
-    background: #f9f9f9;
+    font-weight: normal;
+    font-style: italic;
+    color: #333;
 }
 
 .blog-post td {
@@ -281,18 +416,18 @@ section {
 }
 
 .blog-post code {
-    background: #f5f5f5;
+    font-family: "Courier New", Courier, monospace;
+    background: #fff;
     padding: 2px 6px;
-    border-radius: 4px;
     font-size: 0.9rem;
 }
 
 .blog-post pre {
-    background: #f5f5f5;
+    background: #fff;
     padding: 16px;
-    border-radius: 8px;
     overflow-x: auto;
     margin-bottom: 20px;
+    border: 1px solid #ddd;
 }
 
 .blog-post pre code {
@@ -306,21 +441,20 @@ section {
 
 .blog-post figure img {
     width: 100%;
-    border-radius: 8px;
     border: 1px solid #ddd;
 }
 
 .blog-post figcaption {
     margin-top: 8px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #666;
-    font-style: italic;
     text-align: center;
+    font-style: italic;
 }
 
 .back-link {
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 48px;
+    padding-top: 24px;
     border-top: 1px solid #ddd;
 }
 
@@ -331,27 +465,67 @@ section {
 
 /* Video */
 .video-container {
-    margin: 20px 0;
+    margin: 24px 0;
 }
 
 .video-container video {
     width: 100%;
     max-width: 100%;
-    border-radius: 8px;
     background: #000;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    nav {
+        padding: 24px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .nav-links {
+        gap: 24px;
+    }
+
     .container {
-        padding: 40px 16px;
+        padding: 32px 24px 60px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero-image {
+        max-width: 200px;
+    }
+
+    section {
+        margin-left: 0;
     }
 
     h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paper {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .paper-date {
+        display: block;
+        padding-bottom: 4px;
+    }
+
+    .paper-info {
+        display: block;
     }
 }
