@@ -15,6 +15,7 @@
         <div class="nav-links">
             <a href="../index.html">Home</a>
             <a href="../projects.html" class="active">Projects</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">☀️</button>
         </div>
     </nav>
 
@@ -236,5 +237,27 @@
             </p>
         </article>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleButton(newTheme);
+        }
+
+        function updateToggleButton(theme) {
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            updateToggleButton(savedTheme);
+        })();
+    </script>
 </body>
 </html>
