@@ -8,6 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 <body>
     <nav>
@@ -42,24 +48,23 @@
 
     <script>
         function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
+            const root = document.documentElement;
+            const currentTheme = root.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
+            root.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateToggleButton(newTheme);
         }
 
         function updateToggleButton(theme) {
             const button = document.querySelector('.theme-toggle');
-            button.textContent = theme === 'dark' ? '🌙' : '☀️';
+            if (button) button.textContent = theme === 'dark' ? '🌙' : '☀️';
         }
 
-        (function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme') || 'light';
-            document.body.setAttribute('data-theme', savedTheme);
             updateToggleButton(savedTheme);
-        })();
+        });
     </script>
 </body>
 </html>

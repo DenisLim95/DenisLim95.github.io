@@ -546,91 +546,96 @@ h2 {
 }
 
 /* Dark mode styles */
-[data-theme="dark"] {
+html[data-theme="dark"] {
     background: #1a1a1a;
     color: #e0e0e0;
 }
 
-[data-theme="dark"] a {
-    color: #7aa2d4;
-}
-
-[data-theme="dark"] a:hover {
-    color: #a3c1e8;
-}
-
-[data-theme="dark"] .site-title,
-[data-theme="dark"] .nav-links a,
-[data-theme="dark"] nav .nav-container a,
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] .paper-title,
-[data-theme="dark"] .project-title,
-[data-theme="dark"] .project-card-title,
-[data-theme="dark"] .blog-post h3,
-[data-theme="dark"] .blog-post p,
-[data-theme="dark"] .blog-post li,
-[data-theme="dark"] .blog-post th,
-[data-theme="dark"] .blog-post td {
+html[data-theme="dark"] body {
+    background: #1a1a1a;
     color: #e0e0e0;
 }
 
-[data-theme="dark"] .paper-date,
-[data-theme="dark"] .date,
-[data-theme="dark"] .paper-content .paper-authors {
+html[data-theme="dark"] a {
+    color: #7aa2d4;
+}
+
+html[data-theme="dark"] a:hover {
+    color: #a3c1e8;
+}
+
+html[data-theme="dark"] .site-title,
+html[data-theme="dark"] .nav-links a,
+html[data-theme="dark"] nav .nav-container a,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] .paper-title,
+html[data-theme="dark"] .project-title,
+html[data-theme="dark"] .project-card-title,
+html[data-theme="dark"] .blog-post h3,
+html[data-theme="dark"] .blog-post p,
+html[data-theme="dark"] .blog-post li,
+html[data-theme="dark"] .blog-post th,
+html[data-theme="dark"] .blog-post td {
+    color: #e0e0e0;
+}
+
+html[data-theme="dark"] .paper-date,
+html[data-theme="dark"] .date,
+html[data-theme="dark"] .paper-content .paper-authors {
     color: #999;
 }
 
-[data-theme="dark"] .paper-authors,
-[data-theme="dark"] .post-meta,
-[data-theme="dark"] .blog-post figcaption {
+html[data-theme="dark"] .paper-authors,
+html[data-theme="dark"] .post-meta,
+html[data-theme="dark"] .blog-post figcaption {
     color: #aaa;
 }
 
-[data-theme="dark"] .paper-desc,
-[data-theme="dark"] .item-desc,
-[data-theme="dark"] .project-desc,
-[data-theme="dark"] .paper-content .paper-desc {
+html[data-theme="dark"] .paper-desc,
+html[data-theme="dark"] .item-desc,
+html[data-theme="dark"] .project-desc,
+html[data-theme="dark"] .paper-content .paper-desc {
     color: #bbb;
 }
 
-[data-theme="dark"] .hero-links a:after,
-[data-theme="dark"] .links a:after {
+html[data-theme="dark"] .hero-links a:after,
+html[data-theme="dark"] .links a:after {
     color: #666;
 }
 
-[data-theme="dark"] .project-card-image,
-[data-theme="dark"] .blog-post pre,
-[data-theme="dark"] .blog-post figure img {
+html[data-theme="dark"] .project-card-image,
+html[data-theme="dark"] .blog-post pre,
+html[data-theme="dark"] .blog-post figure img {
     background: #2a2a2a;
     border-color: #444;
 }
 
-[data-theme="dark"] .blog-post code {
+html[data-theme="dark"] .blog-post code {
     background: #2a2a2a;
 }
 
-[data-theme="dark"] .blog-post th,
-[data-theme="dark"] .blog-post td {
+html[data-theme="dark"] .blog-post th,
+html[data-theme="dark"] .blog-post td {
     border-bottom-color: #444;
 }
 
-[data-theme="dark"] .back-link {
+html[data-theme="dark"] .back-link {
     border-top-color: #444;
 }
 
-[data-theme="dark"] .project-card-image.placeholder {
+html[data-theme="dark"] .project-card-image.placeholder {
     color: #777;
 }
 
-[data-theme="dark"] .coming-soon {
+html[data-theme="dark"] .coming-soon {
     color: #777;
 }
 
-[data-theme="dark"] .theme-toggle {
+html[data-theme="dark"] .theme-toggle {
     color: #999;
 }
 
-[data-theme="dark"] .theme-toggle:hover {
+html[data-theme="dark"] .theme-toggle:hover {
     color: #e0e0e0;
 }
