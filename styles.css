@@ -10,8 +10,8 @@ body {
     font-family: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
     font-size: 17px;
     line-height: 1.6;
-    color: #333;
-    background: #fff;
+    color: #4b4945;
+    background: #f5efe2;
     font-feature-settings: "kern", "liga", "onum";
     -webkit-font-smoothing: antialiased;
 }
@@ -24,7 +24,7 @@ body {
 
 /* Links */
 a {
-    color: #0066cc;
+    color: #6b2c20;
     text-decoration: none;
 }
 
@@ -45,17 +45,17 @@ nav {
 }
 
 .nav-links a {
-    color: #333;
+    color: #4b4945;
     font-size: 15px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #0066cc;
+    color: #6b2c20;
 }
 
 .nav-sep {
-    color: #999;
+    color: #7a7770;
     font-size: 14px;
 }
 
@@ -89,11 +89,11 @@ nav {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 4px;
-    color: #333;
+    color: #4b4945;
 }
 
 .tagline {
-    color: #666;
+    color: #7a7770;
     font-size: 15px;
     margin-bottom: 16px;
 }
@@ -124,8 +124,8 @@ h2 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 16px;
-    color: #333;
-    border-bottom: 1px solid #eee;
+    color: #4b4945;
+    border-bottom: 1px solid #dccfb3;
     padding-bottom: 8px;
 }
 
@@ -146,14 +146,14 @@ h2 {
 .news-date {
     display: inline-block;
     width: 80px;
-    color: #666;
+    color: #7a7770;
     font-size: 14px;
 }
 
 .news-toggle {
     background: none;
     border: none;
-    color: #0066cc;
+    color: #6b2c20;
     cursor: pointer;
     font-size: 14px;
     padding: 0;
@@ -178,16 +178,16 @@ h2 {
 }
 
 .pub-authors {
-    color: #555;
+    color: #7a7770;
     font-size: 14px;
 }
 
 .pub-authors strong {
-    color: #333;
+    color: #4b4945;
 }
 
 .pub-venue {
-    color: #666;
+    color: #7a7770;
     font-size: 14px;
     font-style: italic;
 }
@@ -208,7 +208,7 @@ h2 {
 .edu-date {
     display: inline-block;
     width: 100px;
-    color: #666;
+    color: #7a7770;
     font-size: 14px;
 }
 
@@ -216,9 +216,9 @@ h2 {
 footer {
     margin-top: 60px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #dccfb3;
     text-align: center;
-    color: #999;
+    color: #7a7770;
     font-size: 14px;
 }
 
@@ -262,7 +262,7 @@ html[data-theme="dark"] .nav-links a.active {
 }
 
 html[data-theme="dark"] .nav-sep {
-    color: #666;
+    color: #7a7770;
 }
 
 html[data-theme="dark"] .hero-content h1,
@@ -271,17 +271,17 @@ html[data-theme="dark"] h2 {
 }
 
 html[data-theme="dark"] h2 {
-    border-bottom-color: #333;
+    border-bottom-color: #4b4945;
 }
 
 html[data-theme="dark"] .tagline {
-    color: #999;
+    color: #7a7770;
 }
 
 html[data-theme="dark"] .news-date,
 html[data-theme="dark"] .exp-date,
 html[data-theme="dark"] .edu-date {
-    color: #999;
+    color: #7a7770;
 }
 
 html[data-theme="dark"] .news-toggle {
@@ -297,12 +297,12 @@ html[data-theme="dark"] .pub-authors strong {
 }
 
 html[data-theme="dark"] .pub-venue {
-    color: #999;
+    color: #7a7770;
 }
 
 html[data-theme="dark"] footer {
-    border-top-color: #333;
-    color: #666;
+    border-top-color: #4b4945;
+    color: #7a7770;
 }
 
 /* Projects page styles */
@@ -328,8 +328,8 @@ html[data-theme="dark"] footer {
 
 .project-card-image {
     aspect-ratio: 16 / 10;
-    background: #f5f5f5;
-    border: 1px solid #eee;
+    background: #ece4cf;
+    border: 1px solid #dccfb3;
     overflow: hidden;
     margin-bottom: 10px;
     border-radius: 4px;
@@ -337,7 +337,7 @@ html[data-theme="dark"] footer {
 
 html[data-theme="dark"] .project-card-image {
     background: #2a2a2a;
-    border-color: #333;
+    border-color: #4b4945;
 }
 
 .project-card-image img {
@@ -350,7 +350,7 @@ html[data-theme="dark"] .project-card-image {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: #7a7770;
     font-size: 14px;
 }
 
@@ -361,7 +361,7 @@ html[data-theme="dark"] .project-card-image {
 .project-card-title {
     font-size: 15px;
     font-weight: 500;
-    color: #333;
+    color: #4b4945;
     margin: 0;
 }
 
@@ -370,7 +370,7 @@ html[data-theme="dark"] .project-card-title {
 }
 
 .project-card:hover .project-card-title {
-    color: #0066cc;
+    color: #6b2c20;
 }
 
 html[data-theme="dark"] .project-card:hover .project-card-title {
@@ -393,12 +393,12 @@ html[data-theme="dark"] .project-card:hover .project-card-title {
 }
 
 .post-meta {
-    color: #666;
+    color: #7a7770;
     font-size: 14px;
 }
 
 html[data-theme="dark"] .post-meta {
-    color: #999;
+    color: #7a7770;
 }
 
 .post-links {
@@ -419,7 +419,7 @@ html[data-theme="dark"] .post-meta {
 .blog-post h3 {
     font-size: 16px;
     font-weight: 500;
-    color: #333;
+    color: #4b4945;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -452,12 +452,12 @@ html[data-theme="dark"] .blog-post h3 {
 .blog-post td {
     padding: 8px 12px;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #dccfb3;
 }
 
 html[data-theme="dark"] .blog-post th,
 html[data-theme="dark"] .blog-post td {
-    border-bottom-color: #333;
+    border-bottom-color: #4b4945;
 }
 
 .blog-post th {
@@ -466,7 +466,7 @@ html[data-theme="dark"] .blog-post td {
 
 .blog-post code {
     font-family: "SF Mono", Monaco, monospace;
-    background: #f5f5f5;
+    background: #ece4cf;
     padding: 2px 5px;
     font-size: 14px;
     border-radius: 3px;
@@ -477,7 +477,7 @@ html[data-theme="dark"] .blog-post code {
 }
 
 .blog-post pre {
-    background: #f5f5f5;
+    background: #ece4cf;
     padding: 14px;
     overflow-x: auto;
     margin-bottom: 16px;
@@ -505,27 +505,27 @@ html[data-theme="dark"] .blog-post pre {
 .blog-post figcaption {
     margin-top: 8px;
     font-size: 13px;
-    color: #666;
+    color: #7a7770;
     text-align: center;
     font-style: italic;
 }
 
 html[data-theme="dark"] .blog-post figcaption {
-    color: #999;
+    color: #7a7770;
 }
 
 .back-link {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #dccfb3;
 }
 
 html[data-theme="dark"] .back-link {
-    border-top-color: #333;
+    border-top-color: #4b4945;
 }
 
 .coming-soon {
-    color: #999;
+    color: #7a7770;
     font-style: italic;
 }
 
