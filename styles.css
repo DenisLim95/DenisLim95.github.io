@@ -135,8 +135,14 @@ h2 {
 }
 
 .news-list li {
+    padding-bottom: 10px;
     margin-bottom: 10px;
     font-size: 15px;
+    border-bottom: 1px dashed #dccfb3;
+}
+
+.news-list li:last-child {
+    border-bottom: none;
 }
 
 .news-hidden {
@@ -282,6 +288,10 @@ html[data-theme="dark"] .news-date,
 html[data-theme="dark"] .exp-date,
 html[data-theme="dark"] .edu-date {
     color: #7a7770;
+}
+
+html[data-theme="dark"] .news-list li {
+    border-bottom-color: #4b4945;
 }
 
 html[data-theme="dark"] .news-toggle {
