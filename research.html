@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Denis Federico Manuel Lim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <div class="nav-links">
+                <a href="index.html">about</a>
+                <span class="nav-sep">|</span>
+                <a href="research.html" class="active">research</a>
+                <span class="nav-sep">|</span>
+                <a href="projects.html">projects</a>
+                <span class="nav-sep">|</span>
+                <a href="denis_resume_2026_updated.pdf">cv</a>
+                <span class="nav-sep">|</span>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+            </div>
+        </nav>
+
+        <main>
+            <section>
+                <h2>Research</h2>
+                <p>My research focuses on AI safety and mechanistic interpretability, particularly understanding how neural networks develop internal representations and whether models can accurately report on their own internal states.</p>
+            </section>
+
+            <section>
+                <h2>Current</h2>
+                <ul class="exp-list">
+                    <li>
+                        <span class="exp-date">2026–</span>
+                        <strong>KAIST STAI Lab</strong> — Research Collaborator<br>
+                        <span style="margin-left: 100px; color: #666; font-size: 14px;">Advised by Seong Joon Oh</span>
+                    </li>
+                    <li>
+                        <span class="exp-date">2026–</span>
+                        <strong>SPAR Research Fellowship</strong> — Research Fellow<br>
+                        <span style="margin-left: 100px; color: #666; font-size: 14px;">Investigating whether RL training improves a model's ability to detect its own internal errors. Mentored by Laura Schulz.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Past</h2>
+                <ul class="exp-list">
+                    <li>
+                        <span class="exp-date">2026</span>
+                        <strong>Arcadia Impact</strong> — Research Engineer<br>
+                        <span style="margin-left: 100px; color: #666; font-size: 14px;">Automated Research Alignment team. Collaborated with UK AISI on building research scaffolds.</span>
+                    </li>
+                    <li>
+                        <span class="exp-date">2026</span>
+                        <strong>MARS V Fellowship</strong> — Research Fellow<br>
+                        <span style="margin-left: 100px; color: #666; font-size: 14px;">Investigated mechanistic detection of unfaithful LLM translations.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Publications</h2>
+                <ul class="pub-list">
+                    <li>
+                        <a href="https://www.lesswrong.com/posts/zGaQ3SS9C6So9NXFg">Lessons from building an automated research scaffold</a><br>
+                        <span class="pub-authors">A. Aristizabal, J. Hills, D. Gould, M. Martinez, F. Galperin, <strong>D. Lim</strong>, A. Bowkis</span><br>
+                        <span class="pub-venue">LessWrong, 2026. Arcadia Impact + UK AISI.</span>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/file/d/1_dhscuXvIvLNLIkpLEj75Ks6DjKdy6IP/view">Neighbor Crowding Predicts Feature Stability in Sparse Autoencoders</a><br>
+                        <span class="pub-authors"><strong>D. Lim</strong>, N. Dasari, G. Flint, K. Zhu</span><br>
+                        <span class="pub-venue">NeurReps Workshop @ NeurIPS 2026.</span>
+                    </li>
+                    <li>
+                        Game-Theoretic Specialization of Safety LoRA Adapters<br>
+                        <span class="pub-authors">M. Lovett, <strong>D. Lim</strong>, S. Vosoughi</span><br>
+                        <span class="pub-venue">Under review, ICLR 2027.</span>
+                    </li>
+                    <li>
+                        <a href="https://apartresearch.com/sprints/projects/hidden-in-plain-sight-representational-adversarial-steganography-in-colluding-llms-sekh">Representational Adversarial Steganography in Colluding LLMs</a><br>
+                        <span class="pub-authors">V. Rangaraju, S. Medicherla, ..., <strong>D. Lim</strong>, et al.</span><br>
+                        <span class="pub-venue">Apart Research Hackathon, 2026.</span>
+                    </li>
+                    <li>
+                        Chain-of-thought Faithfulness in Small Reasoning Models<br>
+                        <span class="pub-authors"><strong>D. Lim</strong></span><br>
+                        <span class="pub-venue">Independent research project, 2025.</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Denis Federico Manuel Lim</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const root = document.documentElement;
+            const currentTheme = root.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleButton(newTheme);
+        }
+
+        function updateToggleButton(theme) {
+            const button = document.querySelector('.theme-toggle');
+            if (button) button.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            updateToggleButton(savedTheme);
+        });
+    </script>
+</body>
+</html>

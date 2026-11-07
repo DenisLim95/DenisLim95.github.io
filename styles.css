@@ -1,289 +1,318 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base styles */
 body {
     font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #333;
-    background: #f7f7f7;
+    background: #fff;
 }
 
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Links */
 a {
-    color: #4a6fa5;
-    text-decoration: underline;
+    color: #0066cc;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #2d4a6f;
+    text-decoration: underline;
 }
 
-/* Navigation - full width */
+/* Navigation */
 nav {
-    padding: 32px 4vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.site-title {
-    font-size: 1.8rem;
-    color: #333;
-    text-decoration: none;
-    font-weight: normal;
-}
-
-.site-title:hover {
-    text-decoration: none;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .nav-links {
-    display: flex;
-    gap: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .nav-links a {
     color: #333;
-    text-decoration: none;
+    font-size: 15px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    text-decoration: underline;
+    color: #0066cc;
 }
 
-/* Legacy nav-container support */
-.nav-container {
-    display: flex;
-    gap: 24px;
+.nav-sep {
+    color: #999;
+    font-size: 14px;
 }
 
-nav .nav-container a {
-    color: #333;
-    text-decoration: none;
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    line-height: 1;
 }
 
-nav .nav-container a:hover {
-    text-decoration: underline;
-}
-
-/* Main container - centered */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 4vw 80px;
-}
-
-/* Hero section - two column layout */
+/* Hero section */
 .hero {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 60px;
-    margin-bottom: 64px;
-    align-items: start;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
 .hero-image {
-    width: 200px;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .hero-image img {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
-    object-position: center 50%;
+}
+
+.hero-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.tagline {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 16px;
 }
 
 .hero-content p {
-    margin-bottom: 16px;
-}
-
-.hero-links {
-    margin-top: 24px;
-}
-
-.hero-links a {
-    margin-right: 8px;
-}
-
-.hero-links a:after {
-    content: " /";
-    color: #999;
-    text-decoration: none;
-    margin-left: 8px;
-}
-
-.hero-links a:last-child:after {
-    content: "";
-}
-
-/* Sections - align with hero content (not photo) */
-section {
-    margin-bottom: 48px;
-    margin-left: 260px; /* 200px photo + 60px gap */
-}
-
-header {
-    margin-bottom: 48px;
-}
-
-h1 {
-    font-size: 1.8rem;
-    font-weight: normal;
-    margin-bottom: 16px;
-    color: #333;
-}
-
-h2 {
-    font-size: 1.5rem;
-    font-weight: normal;
-    margin-bottom: 24px;
-    color: #333;
-}
-
-.intro p {
     margin-bottom: 12px;
 }
 
-.links {
+.hero-content em {
+    font-style: italic;
+}
+
+.contact-links {
     margin-top: 16px;
+    font-size: 15px;
 }
 
-.links a {
-    margin-right: 8px;
+.contact-links a {
+    margin-right: 4px;
 }
 
-.links a:after {
-    content: " /";
-    color: #999;
-    text-decoration: none;
-    margin-left: 8px;
+/* Sections */
+section {
+    margin-bottom: 36px;
 }
 
-.links a:last-child:after {
-    content: "";
-}
-
-/* Research/Paper entries - table style */
-.papers-list {
-    display: table;
-    width: 100%;
-}
-
-.paper {
-    display: table-row;
-}
-
-.paper-date {
-    display: table-cell;
-    color: #888;
-    font-size: 0.95rem;
-    padding-right: 24px;
-    padding-bottom: 8px;
-    white-space: nowrap;
-    vertical-align: top;
-}
-
-.paper-info {
-    display: table-cell;
-    padding-bottom: 8px;
-    vertical-align: top;
-}
-
-.paper-title {
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
     color: #333;
-    margin-bottom: 4px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
 }
 
-.paper-title a {
-    color: #4a6fa5;
+/* News section */
+.news-list {
+    list-style: none;
 }
 
-.paper-authors {
+.news-list li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.news-hidden {
+    display: none;
+}
+
+.news-date {
+    display: inline-block;
+    width: 80px;
     color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 4px;
+    font-size: 14px;
 }
 
-.paper-desc {
-    color: #555;
-    font-size: 0.95rem;
-    margin-top: 4px;
+.news-toggle {
+    background: none;
+    border: none;
+    color: #0066cc;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    margin-top: 8px;
 }
 
-/* Legacy paper structure */
-.paper-content .paper-title {
-    font-weight: normal;
-    color: #333;
-    margin-bottom: 4px;
+.news-toggle:hover {
+    text-decoration: underline;
 }
 
-.paper-content .paper-authors {
-    color: #888;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+/* Publications */
+.pub-list {
+    list-style: none;
 }
 
-.paper-content .paper-desc {
-    color: #555;
-    font-size: 0.95rem;
-}
-
-/* Experience/Education items */
-.item {
+.pub-list li {
     margin-bottom: 16px;
 }
 
-.item p {
-    margin-bottom: 4px;
+.pub-list a {
+    font-weight: 500;
 }
 
-.item-desc {
+.pub-authors {
     color: #555;
-    font-size: 0.95rem;
+    font-size: 14px;
 }
 
-.date {
-    color: #888;
-    font-size: 0.9rem;
+.pub-authors strong {
+    color: #333;
 }
 
-/* Projects page */
+.pub-venue {
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Experience & Education */
+.exp-list,
+.edu-list {
+    list-style: none;
+}
+
+.exp-list li,
+.edu-list li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.exp-date,
+.edu-date {
+    display: inline-block;
+    width: 100px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 22px;
+    }
+
+    .news-date,
+    .exp-date,
+    .edu-date {
+        display: block;
+        margin-bottom: 2px;
+    }
+}
+
+/* Dark mode */
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+html[data-theme="dark"] a {
+    color: #6db3f2;
+}
+
+html[data-theme="dark"] .nav-links a {
+    color: #e0e0e0;
+}
+
+html[data-theme="dark"] .nav-links a:hover,
+html[data-theme="dark"] .nav-links a.active {
+    color: #6db3f2;
+}
+
+html[data-theme="dark"] .nav-sep {
+    color: #666;
+}
+
+html[data-theme="dark"] .hero-content h1,
+html[data-theme="dark"] h2 {
+    color: #e0e0e0;
+}
+
+html[data-theme="dark"] h2 {
+    border-bottom-color: #333;
+}
+
+html[data-theme="dark"] .tagline {
+    color: #999;
+}
+
+html[data-theme="dark"] .news-date,
+html[data-theme="dark"] .exp-date,
+html[data-theme="dark"] .edu-date {
+    color: #999;
+}
+
+html[data-theme="dark"] .news-toggle {
+    color: #6db3f2;
+}
+
+html[data-theme="dark"] .pub-authors {
+    color: #bbb;
+}
+
+html[data-theme="dark"] .pub-authors strong {
+    color: #e0e0e0;
+}
+
+html[data-theme="dark"] .pub-venue {
+    color: #999;
+}
+
+html[data-theme="dark"] footer {
+    border-top-color: #333;
+    color: #666;
+}
+
+/* Projects page styles */
 .projects-page section {
     margin-left: 0;
 }
 
-/* Projects */
-.project {
-    margin-bottom: 24px;
-}
-
-.project-title {
-    font-weight: normal;
-    color: #333;
-    margin-bottom: 6px;
-}
-
-.project-desc {
-    color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-}
-
-.project-links {
-    font-size: 0.95rem;
-}
-
-/* Projects Grid (Catalog) */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 32px;
+    gap: 24px;
 }
 
 .project-card {
@@ -298,10 +327,16 @@ h2 {
 
 .project-card-image {
     aspect-ratio: 16 / 10;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border: 1px solid #eee;
     overflow: hidden;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+html[data-theme="dark"] .project-card-image {
+    background: #2a2a2a;
+    border-color: #333;
 }
 
 .project-card-image img {
@@ -315,7 +350,7 @@ h2 {
     align-items: center;
     justify-content: center;
     color: #999;
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
 .project-card-image.placeholder::after {
@@ -323,111 +358,133 @@ h2 {
 }
 
 .project-card-title {
-    font-size: 1rem;
-    font-weight: normal;
+    font-size: 15px;
+    font-weight: 500;
     color: #333;
     margin: 0;
 }
 
-.project-card:hover .project-card-title {
-    color: #4a6fa5;
+html[data-theme="dark"] .project-card-title {
+    color: #e0e0e0;
 }
 
-/* Blog Post Styles */
+.project-card:hover .project-card-title {
+    color: #0066cc;
+}
+
+html[data-theme="dark"] .project-card:hover .project-card-title {
+    color: #6db3f2;
+}
+
+/* Blog post styles */
 .blog-post {
-    max-width: 720px;
+    max-width: 100%;
 }
 
 .blog-post header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .blog-post h1 {
-    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .post-meta {
     color: #666;
-    font-size: 0.95rem;
+    font-size: 14px;
+}
+
+html[data-theme="dark"] .post-meta {
+    color: #999;
 }
 
 .post-links {
     margin-top: 8px;
-    font-size: 0.95rem;
+    font-size: 14px;
 }
 
 .blog-post section {
-    margin-bottom: 36px;
-    margin-left: 0;
+    margin-bottom: 28px;
 }
 
 .blog-post h2 {
-    font-size: 1.3rem;
-    margin-top: 36px;
-    margin-bottom: 16px;
+    font-size: 18px;
+    margin-top: 28px;
+    margin-bottom: 12px;
 }
 
 .blog-post h3 {
-    font-size: 1.1rem;
-    font-weight: normal;
+    font-size: 16px;
+    font-weight: 500;
     color: #333;
-    margin-top: 24px;
-    margin-bottom: 12px;
-    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+html[data-theme="dark"] .blog-post h3 {
+    color: #e0e0e0;
 }
 
 .blog-post p {
-    margin-bottom: 16px;
-    color: #333;
+    margin-bottom: 14px;
 }
 
 .blog-post ul {
-    margin-bottom: 16px;
-    padding-left: 24px;
+    margin-bottom: 14px;
+    padding-left: 20px;
 }
 
 .blog-post li {
-    margin-bottom: 8px;
-    color: #333;
+    margin-bottom: 6px;
 }
 
 .blog-post table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
+    margin-bottom: 16px;
+    font-size: 14px;
 }
 
 .blog-post th,
 .blog-post td {
     padding: 8px 12px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
+}
+
+html[data-theme="dark"] .blog-post th,
+html[data-theme="dark"] .blog-post td {
+    border-bottom-color: #333;
 }
 
 .blog-post th {
-    font-weight: normal;
-    font-style: italic;
-    color: #333;
-}
-
-.blog-post td {
-    color: #333;
+    font-weight: 500;
 }
 
 .blog-post code {
-    font-family: "Courier New", Courier, monospace;
-    background: #fff;
-    padding: 2px 6px;
-    font-size: 0.9rem;
+    font-family: "SF Mono", Monaco, monospace;
+    background: #f5f5f5;
+    padding: 2px 5px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+html[data-theme="dark"] .blog-post code {
+    background: #2a2a2a;
 }
 
 .blog-post pre {
-    background: #fff;
-    padding: 16px;
+    background: #f5f5f5;
+    padding: 14px;
     overflow-x: auto;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
+
+html[data-theme="dark"] .blog-post pre {
+    background: #2a2a2a;
 }
 
 .blog-post pre code {
@@ -436,206 +493,47 @@ h2 {
 }
 
 .blog-post figure {
-    margin: 24px 0;
+    margin: 20px 0;
 }
 
 .blog-post figure img {
     width: 100%;
-    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .blog-post figcaption {
     margin-top: 8px;
-    font-size: 0.85rem;
+    font-size: 13px;
     color: #666;
     text-align: center;
     font-style: italic;
 }
 
+html[data-theme="dark"] .blog-post figcaption {
+    color: #999;
+}
+
 .back-link {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid #ddd;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+html[data-theme="dark"] .back-link {
+    border-top-color: #333;
 }
 
 .coming-soon {
-    color: #888;
+    color: #999;
     font-style: italic;
 }
 
-/* Video */
 .video-container {
-    margin: 24px 0;
+    margin: 20px 0;
 }
 
 .video-container video {
     width: 100%;
     max-width: 100%;
-    background: #000;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    nav {
-        padding: 24px;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .nav-links {
-        gap: 24px;
-    }
-
-    .container {
-        padding: 32px 24px 60px;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .hero-image {
-        max-width: 200px;
-    }
-
-    section {
-        margin-left: 0;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .paper {
-        display: block;
-        margin-bottom: 20px;
-    }
-
-    .paper-date {
-        display: block;
-        padding-bottom: 4px;
-    }
-
-    .paper-info {
-        display: block;
-    }
-}
-
-/* Theme toggle button */
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 4px 8px;
-    color: #666;
-    transition: color 0.2s;
-}
-
-.theme-toggle:hover {
-    color: #333;
-}
-
-/* Dark mode styles */
-html[data-theme="dark"] {
-    background: #1a1a1a;
-    color: #e0e0e0;
-}
-
-html[data-theme="dark"] body {
-    background: #1a1a1a;
-    color: #e0e0e0;
-}
-
-html[data-theme="dark"] a {
-    color: #7aa2d4;
-}
-
-html[data-theme="dark"] a:hover {
-    color: #a3c1e8;
-}
-
-html[data-theme="dark"] .site-title,
-html[data-theme="dark"] .nav-links a,
-html[data-theme="dark"] nav .nav-container a,
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] .paper-title,
-html[data-theme="dark"] .project-title,
-html[data-theme="dark"] .project-card-title,
-html[data-theme="dark"] .blog-post h3,
-html[data-theme="dark"] .blog-post p,
-html[data-theme="dark"] .blog-post li,
-html[data-theme="dark"] .blog-post th,
-html[data-theme="dark"] .blog-post td {
-    color: #e0e0e0;
-}
-
-html[data-theme="dark"] .paper-date,
-html[data-theme="dark"] .date,
-html[data-theme="dark"] .paper-content .paper-authors {
-    color: #999;
-}
-
-html[data-theme="dark"] .paper-authors,
-html[data-theme="dark"] .post-meta,
-html[data-theme="dark"] .blog-post figcaption {
-    color: #aaa;
-}
-
-html[data-theme="dark"] .paper-desc,
-html[data-theme="dark"] .item-desc,
-html[data-theme="dark"] .project-desc,
-html[data-theme="dark"] .paper-content .paper-desc {
-    color: #bbb;
-}
-
-html[data-theme="dark"] .hero-links a:after,
-html[data-theme="dark"] .links a:after {
-    color: #666;
-}
-
-html[data-theme="dark"] .project-card-image,
-html[data-theme="dark"] .blog-post pre,
-html[data-theme="dark"] .blog-post figure img {
-    background: #2a2a2a;
-    border-color: #444;
-}
-
-html[data-theme="dark"] .blog-post code {
-    background: #2a2a2a;
-}
-
-html[data-theme="dark"] .blog-post th,
-html[data-theme="dark"] .blog-post td {
-    border-bottom-color: #444;
-}
-
-html[data-theme="dark"] .back-link {
-    border-top-color: #444;
-}
-
-html[data-theme="dark"] .project-card-image.placeholder {
-    color: #777;
-}
-
-html[data-theme="dark"] .coming-soon {
-    color: #777;
-}
-
-html[data-theme="dark"] .theme-toggle {
-    color: #999;
-}
-
-html[data-theme="dark"] .theme-toggle:hover {
-    color: #e0e0e0;
+    border-radius: 4px;
 }

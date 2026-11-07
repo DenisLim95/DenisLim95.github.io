@@ -16,21 +16,25 @@
     </script>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="site-title">Denis Federico Manuel Lim</a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="projects.html" class="active">Projects</a>
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">☀️</button>
-        </div>
-    </nav>
+    <div class="wrapper">
+        <nav>
+            <div class="nav-links">
+                <a href="index.html">about</a>
+                <span class="nav-sep">|</span>
+                <a href="research.html">research</a>
+                <span class="nav-sep">|</span>
+                <a href="projects.html" class="active">projects</a>
+                <span class="nav-sep">|</span>
+                <a href="denis_resume_2026_updated.pdf">cv</a>
+                <span class="nav-sep">|</span>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+            </div>
+        </nav>
 
-    <div class="container">
-        <header>
-            <h1>Projects</h1>
-        </header>
-
-        <div class="projects-grid">
+        <main class="projects-page">
+            <section>
+                <h2>Projects</h2>
+                <div class="projects-grid">
             <a href="projects/bluedot-puzzle.html" class="project-card">
                 <div class="project-card-image">
                     <img src="https://raw.githubusercontent.com/DenisLim95/nonlinear-feature-geometry-bluedot-puzzle/main/3d-pca.png" alt="BlueDot Technical AI Safety Puzzle">
@@ -43,7 +47,13 @@
                 </div>
                 <h3 class="project-card-title">Trust the kernel</h3>
             </a>
-        </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Denis Federico Manuel Lim</p>
+        </footer>
     </div>
 
     <script>

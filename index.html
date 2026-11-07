@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script>
-        // Apply theme before page renders to prevent flash
         (function() {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-theme', savedTheme);
@@ -17,176 +16,117 @@
     </script>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="site-title">Denis Federico Manuel Lim</a>
-        <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="projects.html">Projects</a>
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">☀️</button>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="hero">
-            <div class="hero-image">
-                <img src="images/profile.jpg" alt="Denis Federico Manuel Lim">
+    <div class="wrapper">
+        <nav>
+            <div class="nav-links">
+                <a href="index.html" class="active">about</a>
+                <span class="nav-sep">|</span>
+                <a href="research.html">research</a>
+                <span class="nav-sep">|</span>
+                <a href="projects.html">projects</a>
+                <span class="nav-sep">|</span>
+                <a href="denis_resume_2026_updated.pdf">cv</a>
+                <span class="nav-sep">|</span>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
             </div>
-            <div class="hero-content">
-                <p>I am a Research Collaborator at the <a href="https://stai-lab.org/">KAIST STAI Lab</a> under Professor Seong Joon Oh, and a Research Fellow at the <a href="https://sparai.org/">SPAR Research Fellowship</a>, researching how reinforcement learning affects metacognition in LLMs using mechanistic interpretability methods.</p>
+        </nav>
 
-                <p>At SPAR, I am investigating whether RL training improves a model's ability to detect its own internal errors.</p>
-
-                <p>Previously, I was a Research Engineer at <a href="https://www.arcadiaimpact.org/alignment-research">Arcadia Impact</a> working on Automated Research Alignment, a Research Fellow at the <a href="https://caish.org/mars">MARS V Fellowship</a> investigating mechanistic detection of semantically unfaithful LLM translations of formal specifications, and an AI Engineer at Scale AI building multi-agent deep research systems. Before that, I was a software engineer at Two Sigma and Amazon.</p>
-
-                <p>I am interested in AI safety, mechanistic interpretability, and alignment research.</p>
-
-                <p class="hero-links">
-                    <a href="mailto:denislim95@gmail.com">Email</a>
-                    <a href="https://linkedin.com/in/denis-manuel-lim">LinkedIn</a>
-                    <a href="denis_resume_2026_updated.pdf">Resume</a>
-                </p>
-            </div>
-        </div>
-
-        <section>
-            <h2>Publications</h2>
-
-            <div class="papers-list">
-                <div class="paper">
-                    <div class="paper-date">2026</div>
-                    <div class="paper-info">
-                        <p class="paper-title"><a href="https://www.lesswrong.com/posts/zGaQ3SS9C6So9NXFg">Lessons from building an automated research scaffold</a></p>
-                        <p class="paper-authors">A. Aristizabal, J. Hills, D. Gould, M. Martinez, F. Galperin, <strong>D. Lim</strong>, A. Bowkis</p>
-                        <p class="paper-authors">Arcadia Impact Auto-research Alignment, in collaboration with UK AISI. LessWrong</p>
-                    </div>
+        <main>
+            <section class="hero">
+                <div class="hero-image">
+                    <img src="images/profile.jpg" alt="Denis Federico Manuel Lim">
                 </div>
+                <div class="hero-content">
+                    <h1>Denis Federico Manuel Lim</h1>
+                    <p class="tagline">AI Safety Research</p>
 
-                <div class="paper">
-                    <div class="paper-date">2026</div>
-                    <div class="paper-info">
-                        <p class="paper-title"><a href="https://drive.google.com/file/d/1_dhscuXvIvLNLIkpLEj75Ks6DjKdy6IP/view">Neighbor Crowding Predicts Feature Stability in Sparse Autoencoders</a></p>
-                        <p class="paper-authors"><strong>D. Lim</strong>, N. Dasari, G. Flint, K. Zhu</p>
-                        <p class="paper-authors">Accepted, NeurReps Workshop @ NeurIPS 2026</p>
-                    </div>
+                    <p>I am a researcher focused on <em>AI safety</em> and <em>mechanistic interpretability</em>. My work investigates how reinforcement learning affects model metacognition and introspection.</p>
+
+                    <p>I am currently a Research Collaborator at <a href="https://stai-lab.org/">KAIST STAI Lab</a> (advised by <a href="https://coallaoh.github.io/">Seong Joon Oh</a>) and a Research Fellow at the <a href="https://sparai.org/">SPAR Research Fellowship</a> (mentored by Laura Schulz). At SPAR, I am investigating whether RL training improves a model's ability to detect its own internal errors.</p>
+
+                    <p>Previously, I was a Research Engineer at <a href="https://www.arcadiaimpact.org/alignment-research">Arcadia Impact</a>, a Research Fellow at the <a href="https://caish.org/mars">MARS V Fellowship</a>, and an AI Engineer at Scale AI. Before transitioning to AI safety, I was a software engineer at Two Sigma and Amazon.</p>
+
+                    <p>I received my M.S. in Computer Science and B.S. in Mechanical Engineering from the University of Southern California.</p>
+
+                    <p class="contact-links">
+                        <a href="mailto:denislim95@gmail.com">email</a> /
+                        <a href="https://linkedin.com/in/denis-manuel-lim">linkedin</a> /
+                        <a href="https://github.com/DenisLim95">github</a> /
+                        <a href="denis_resume_2026_updated.pdf">cv</a>
+                    </p>
                 </div>
+            </section>
 
-                <div class="paper">
-                    <div class="paper-date">2026</div>
-                    <div class="paper-info">
-                        <p class="paper-title">Game-Theoretic Specialization of Safety LoRA Adapters</p>
-                        <p class="paper-authors">M. Lovett, <strong>D. Lim</strong>, S. Vosoughi</p>
-                        <p class="paper-authors">Under review, ICLR 2027</p>
-                    </div>
-                </div>
+            <section class="news">
+                <h2>News</h2>
+                <ul class="news-list" id="news-list">
+                    <li><span class="news-date">Nov 2026</span> Started as Research Collaborator at KAIST STAI Lab with Professor Seong Joon Oh</li>
+                    <li><span class="news-date">Oct 2026</span> Published <a href="https://www.lesswrong.com/posts/zGaQ3SS9C6So9NXFg">"Lessons from building an automated research scaffold"</a> on LessWrong (Arcadia Impact + UK AISI collaboration)</li>
+                    <li><span class="news-date">Sep 2026</span> Started as Research Fellow at SPAR Research Fellowship</li>
+                    <li><span class="news-date">Jul 2026</span> <a href="https://drive.google.com/file/d/1_dhscuXvIvLNLIkpLEj75Ks6DjKdy6IP/view">"Neighbor Crowding Predicts Feature Stability in Sparse Autoencoders"</a> accepted at NeurReps Workshop @ NeurIPS 2026</li>
+                    <li class="news-hidden"><span class="news-date">Jul 2026</span> Started as Research Engineer at Arcadia Impact, working on Automated Research Alignment</li>
+                    <li class="news-hidden"><span class="news-date">Jun 2026</span> Started MARS V Fellowship, investigating mechanistic detection of unfaithful LLM translations</li>
+                    <li class="news-hidden"><span class="news-date">Mar 2026</span> <a href="https://apartresearch.com/sprints/projects/hidden-in-plain-sight-representational-adversarial-steganography-in-colluding-llms-sekh">"Representational Adversarial Steganography in Colluding LLMs"</a> at Apart Research Hackathon</li>
+                </ul>
+                <button class="news-toggle" onclick="toggleNews()">+ show more</button>
+            </section>
 
-                <div class="paper">
-                    <div class="paper-date">2026</div>
-                    <div class="paper-info">
-                        <p class="paper-title"><a href="https://apartresearch.com/sprints/projects/hidden-in-plain-sight-representational-adversarial-steganography-in-colluding-llms-sekh">Representational Adversarial Steganography in Colluding LLMs</a></p>
-                        <p class="paper-authors">V. Rangaraju, S. Medicherla, ..., <strong>D. Lim</strong>, et al.</p>
-                        <p class="paper-authors">Apart Research Hackathon</p>
-                    </div>
-                </div>
+            <section class="publications">
+                <h2>Publications</h2>
+                <ul class="pub-list">
+                    <li>
+                        <a href="https://www.lesswrong.com/posts/zGaQ3SS9C6So9NXFg">Lessons from building an automated research scaffold</a><br>
+                        <span class="pub-authors">A. Aristizabal, J. Hills, D. Gould, M. Martinez, F. Galperin, <strong>D. Lim</strong>, A. Bowkis</span><br>
+                        <span class="pub-venue">LessWrong, 2026. Arcadia Impact + UK AISI.</span>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/file/d/1_dhscuXvIvLNLIkpLEj75Ks6DjKdy6IP/view">Neighbor Crowding Predicts Feature Stability in Sparse Autoencoders</a><br>
+                        <span class="pub-authors"><strong>D. Lim</strong>, N. Dasari, G. Flint, K. Zhu</span><br>
+                        <span class="pub-venue">NeurReps Workshop @ NeurIPS 2026.</span>
+                    </li>
+                    <li>
+                        Game-Theoretic Specialization of Safety LoRA Adapters<br>
+                        <span class="pub-authors">M. Lovett, <strong>D. Lim</strong>, S. Vosoughi</span><br>
+                        <span class="pub-venue">Under review, ICLR 2027.</span>
+                    </li>
+                    <li>
+                        <a href="https://apartresearch.com/sprints/projects/hidden-in-plain-sight-representational-adversarial-steganography-in-colluding-llms-sekh">Representational Adversarial Steganography in Colluding LLMs</a><br>
+                        <span class="pub-authors">V. Rangaraju, S. Medicherla, ..., <strong>D. Lim</strong>, et al.</span><br>
+                        <span class="pub-venue">Apart Research Hackathon, 2026.</span>
+                    </li>
+                    <li>
+                        Chain-of-thought Faithfulness in Small Reasoning Models<br>
+                        <span class="pub-authors"><strong>D. Lim</strong></span><br>
+                        <span class="pub-venue">Independent research project, 2025.</span>
+                    </li>
+                </ul>
+            </section>
 
-                <div class="paper">
-                    <div class="paper-date">2025</div>
-                    <div class="paper-info">
-                        <p class="paper-title">Chain-of-thought Faithfulness in Small Reasoning Models</p>
-                        <p class="paper-authors"><strong>D. Lim</strong></p>
-                        <p class="paper-authors">Independent research project</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <section class="experience">
+                <h2>Experience</h2>
+                <ul class="exp-list">
+                    <li><span class="exp-date">2026–</span> <strong>KAIST STAI Lab</strong>, Research Collaborator</li>
+                    <li><span class="exp-date">2026–</span> <strong>SPAR Research Fellowship</strong>, Research Fellow</li>
+                    <li><span class="exp-date">2026</span> <strong>Arcadia Impact</strong>, Research Engineer</li>
+                    <li><span class="exp-date">2026</span> <strong>MARS V Fellowship</strong>, Research Fellow</li>
+                    <li><span class="exp-date">2025–2026</span> <strong>Scale AI</strong>, AI Engineer</li>
+                    <li><span class="exp-date">2022–2025</span> <strong>Two Sigma</strong>, Software Engineer</li>
+                    <li><span class="exp-date">2020–2022</span> <strong>Amazon</strong>, Software Development Engineer</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Research</h2>
+            <section class="education">
+                <h2>Education</h2>
+                <ul class="edu-list">
+                    <li><span class="edu-date">2017–2019</span> <strong>University of Southern California</strong>, M.S. Computer Science</li>
+                    <li><span class="edu-date">2013–2017</span> <strong>University of Southern California</strong>, B.S. Mechanical Engineering</li>
+                </ul>
+            </section>
+        </main>
 
-            <div class="papers-list">
-                <div class="paper">
-                    <div class="paper-date">2026–</div>
-                    <div class="paper-info">
-                        <p class="paper-title">KAIST STAI Lab, Research Collaborator</p>
-                    </div>
-                </div>
-
-                <div class="paper">
-                    <div class="paper-date">2026–</div>
-                    <div class="paper-info">
-                        <p class="paper-title">SPAR Research Fellowship, Research Fellow</p>
-                    </div>
-                </div>
-
-                <div class="paper">
-                    <div class="paper-date">2026</div>
-                    <div class="paper-info">
-                        <p class="paper-title">Arcadia Impact, Research Engineer</p>
-                    </div>
-                </div>
-
-                <div class="paper">
-                    <div class="paper-date">2026</div>
-                    <div class="paper-info">
-                        <p class="paper-title">MARS V Fellowship, Research Fellow</p>
-                    </div>
-                </div>
-
-                <div class="paper">
-                    <div class="paper-date">2017</div>
-                    <div class="paper-info">
-                        <p class="paper-title">Medical Inhaler Spacer Research</p>
-                        <p class="paper-authors">USC Viterbi Senior Design, in collaboration with Children's Hospital of Los Angeles</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Experience</h2>
-
-            <div class="papers-list">
-                <div class="paper">
-                    <div class="paper-date">2025–2026</div>
-                    <div class="paper-info">
-                        <p class="paper-title">Scale AI, AI Engineer</p>
-                    </div>
-                </div>
-
-                <div class="paper">
-                    <div class="paper-date">2022–2025</div>
-                    <div class="paper-info">
-                        <p class="paper-title">Two Sigma, Software Engineer</p>
-                    </div>
-                </div>
-
-                <div class="paper">
-                    <div class="paper-date">2020–2022</div>
-                    <div class="paper-info">
-                        <p class="paper-title">Amazon, Software Development Engineer</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Education</h2>
-
-            <div class="papers-list">
-                <div class="paper">
-                    <div class="paper-date">2017–2019</div>
-                    <div class="paper-info">
-                        <p class="paper-title">University of Southern California, M.S. Computer Science</p>
-                    </div>
-                </div>
-
-                <div class="paper">
-                    <div class="paper-date">2013–2017</div>
-                    <div class="paper-info">
-                        <p class="paper-title">University of Southern California, B.S. Mechanical Engineering</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <footer>
+            <p>© 2026 Denis Federico Manuel Lim</p>
+        </footer>
     </div>
 
     <script>
@@ -204,7 +144,17 @@
             if (button) button.textContent = theme === 'dark' ? '🌙' : '☀️';
         }
 
-        // Initialize button state
+        function toggleNews() {
+            const hiddenItems = document.querySelectorAll('.news-hidden');
+            const button = document.querySelector('.news-toggle');
+            const isHidden = hiddenItems[0].style.display !== 'list-item';
+
+            hiddenItems.forEach(item => {
+                item.style.display = isHidden ? 'list-item' : 'none';
+            });
+            button.textContent = isHidden ? '- show less' : '+ show more';
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             updateToggleButton(savedTheme);
